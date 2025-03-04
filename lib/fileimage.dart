@@ -14,14 +14,17 @@ class _ImagePickerState extends State<ImagePicker> {
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-           child: Image.asset('images/onboard.png',width: 1000,),
-          )
-        ],
+      body: Container(
+        margin: EdgeInsets.all(16),
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+             child: Image.asset('images/onboard.png',width: 1000,),
+            )
+          ],
+        ),
       ),
     );
   }
