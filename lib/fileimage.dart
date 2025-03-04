@@ -11,9 +11,6 @@ class _ImagePickerState extends State<ImagePicker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
       body: Container(
         margin: EdgeInsets.all(16),
         child: Column(
