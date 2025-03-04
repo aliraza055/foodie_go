@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_go/fileimage.dart';
+import 'package:foodie_go/pages/homepage.dart';
+import 'package:foodie_go/pages/onbarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ImagePicker()
+      home: const HomePage()
     );
   }
 }
