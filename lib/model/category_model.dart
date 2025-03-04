@@ -7,10 +7,10 @@ class CategoryModel {
 
   static List<CategoryModel> getCategoryModel() {
     return [
-      CategoryModel(image: 'ima', name: 'Pizza'),
-      CategoryModel(image: 'ididi', name: 'Burger'),
-      CategoryModel(image: 'ima', name: 'Chinese'),
-      CategoryModel(image: 'ididi', name: 'Mexican'),
+      CategoryModel(image: 'images/pizza.png', name: 'Pizza'),
+      CategoryModel(image: 'images/burger.png', name: 'Burger'),
+      CategoryModel(image: 'images/chinese.png', name: 'Chinese'),
+      CategoryModel(image: 'images/tacos.png', name: 'Mexican'),
     ];
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/model/category_model.dart';
 import 'package:foodie_go/services/widget_serves.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,6 +10,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<CategoryModel> items=[];
+  int _selectIndex=-1;
+  @override
+  void initState() {
+    super.initState();
+    items=CategoryModel.getCategoryModel();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +82,29 @@ class _HomePageState extends State<HomePage> {
                   child: Icon(Icons.search,color: Colors.white,size: 30,),
                 )
               ],
+            ),
+            SizedBox(height: 30,),
+            GestureDetector(
+              onTap: (){
+
+              },
+              child: Container(
+                height: 50,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: items.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return GestureDetector(
+                      onTap: (){
+                         setState(() {
+                           _selectIndex=index;
+                         });
+                      },
+                      child: CategoryTile(image: items[index].image, name: items[index].name,isSelected:_selectIndex==index,));
+              
+                }),
+              ),
             )
           ],
         ),
@@ -81,3 +112,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
