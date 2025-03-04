@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/model/category_model.dart';
+import 'package:foodie_go/pages/categorytile.dart';
 import 'package:foodie_go/services/widget_serves.dart';
 
 class HomePage extends StatefulWidget {
@@ -101,7 +102,10 @@ class _HomePageState extends State<HomePage> {
                            _selectIndex=index;
                          });
                       },
-                      child: CategoryTile(image: items[index].image, name: items[index].name,isSelected:_selectIndex==index,));
+                      child: CategoryTile(
+                        image: items[index].image,
+                         name: items[index].name,
+                         isSelected:_selectIndex==index,));
               
                 }),
               ),
