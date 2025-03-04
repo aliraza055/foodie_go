@@ -8,7 +8,7 @@ class AppServices{
   }
      simpleTextStyle(){
     return TextStyle(
-      color: Colors.black,fontSize:18,
+      color: Colors.black,fontSize:17,
     );
   }
    
