@@ -114,16 +114,63 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
             ),
-            GridView.builder(
-              gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2) , 
-              itemBuilder: (context,index){
-                return FooTile(
-                  image: pizzaItems[index].image,
-                   name: pizzaItems[index].name, 
-                   price: pizzaItems[index].price
-                   );
-              })
+           SizedBox(height: 16,),
+            _selectIndex==0?
+            Expanded(
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: pizzaItems.length,
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.6,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10
+                  ) , 
+                itemBuilder: (context,index){
+                  return FooTile(
+                    image: pizzaItems[index].image,
+                     name: pizzaItems[index].name, 
+                     price: pizzaItems[index].price
+                     );
+                }),
+            ):
+            _selectIndex ==1 ?
+            Container(
+              height: MediaQuery.of(context).size.height/2,
+              child: GridView.builder(
+                itemCount: pizzaItems.length,
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.6,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10
+                  ) , 
+                itemBuilder: (context,index){
+                  return FooTile(
+                    image: pizzaItems[index].image,
+                     name: pizzaItems[index].name, 
+                     price: pizzaItems[index].price
+                     );
+                }),
+            ):Container(
+              height: MediaQuery.of(context).size.height/2,
+              child: GridView.builder(
+                itemCount: pizzaItems.length,
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                childAspectRatio: 0.7,
+                 // mainAxisSpacing: 10,
+                 // crossAxisSpacing: 10
+                  ) , 
+                itemBuilder: (context,index){
+                  return FooTile(
+                    image: pizzaItems[index].image,
+                     name: pizzaItems[index].name, 
+                     price: pizzaItems[index].price
+                     );
+                }),
+            )
+
           ],
         ),
       ),
