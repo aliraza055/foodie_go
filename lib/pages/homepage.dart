@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> items=[];
-  int _selectIndex=-1;
+  int _selectIndex=0;
   @override
   void initState() {
     super.initState();

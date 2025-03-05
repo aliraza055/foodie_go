@@ -13,7 +13,7 @@ class AppServices{
   }
       whiteTextStyle(){
     return TextStyle(
-      color: Colors.white,fontSize:17,fontWeight: FontWeight.bold
+      color: Colors.black,fontSize:17,fontWeight: FontWeight.w500
     );
   }
 }

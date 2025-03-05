@@ -16,7 +16,7 @@ class CategoryTile extends StatelessWidget {
       margin: EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: isSelected ? Colors.red : Colors.yellow, // Change color based on selection
+        color: isSelected ? Colors.red : Color(0xffececf8), // Change color based on selection
       ),
       child: Row(
         children: [
