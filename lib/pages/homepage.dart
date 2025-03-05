@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/model/burger_model.dart';
 import 'package:foodie_go/model/category_model.dart';
 import 'package:foodie_go/model/pizza_model.dart';
 import 'package:foodie_go/pages/categorytile.dart';
@@ -15,12 +16,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> items=[];
   List<PizzaModel> pizzaItems=[];
+  List<BurgerModel>burgerItems=[];
   int _selectIndex=0;
   @override
   void initState() {
     super.initState();
     items=CategoryModel.getCategoryModel();
     pizzaItems=PizzaModel.getPizzaItems();
+    burgerItems=BurgerModel.getBurgers();
   }
   @override
   Widget build(BuildContext context) {
@@ -135,10 +138,10 @@ class _HomePageState extends State<HomePage> {
                 }),
             ):
             _selectIndex ==1 ?
-            Container(
-              height: MediaQuery.of(context).size.height/2,
+            Expanded(
               child: GridView.builder(
-                itemCount: pizzaItems.length,
+                padding: EdgeInsets.zero,
+                itemCount: burgerItems.length,
                 gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.6,
@@ -147,9 +150,9 @@ class _HomePageState extends State<HomePage> {
                   ) , 
                 itemBuilder: (context,index){
                   return FooTile(
-                    image: pizzaItems[index].image,
-                     name: pizzaItems[index].name, 
-                     price: pizzaItems[index].price
+                    image: burgerItems[index].image,
+                     name: burgerItems[index].name, 
+                     price: burgerItems[index].price,
                      );
                 }),
             ):Container(

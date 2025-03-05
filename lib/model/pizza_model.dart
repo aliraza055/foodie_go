@@ -10,23 +10,8 @@ class PizzaModel {
       PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
       PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
       PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'),
-       PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'), PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'), PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'), PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'), PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'),
-
+       PizzaModel(name: 'Cheese Pizza', image: 'images/pizza5.png',price: '1250'),
+      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza6.png',price: '1500'),
     ];
 
   }
