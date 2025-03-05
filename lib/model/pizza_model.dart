@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
 
 class PizzaModel {
   String name;
   String image;
-  PizzaModel({required this.name,required this.image});
-  List<PizzaModel> getPizzaItems(){
+  String price;
+  PizzaModel({required this.name,required this.image,required this.price});
+ static List<PizzaModel> getPizzaItems(){
     return [
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png'),
-      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png'),
+      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza1.png',price: '1250'),
+      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza2.png',price: '1500'),
+      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza3.png',price: '1100'),
+      PizzaModel(name: 'Cheese Pizza', image: 'images/pizza4.png',price: '850'),
 
     ];
 

@@ -20,7 +20,8 @@ class CategoryTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset(image, height: 40, width: 40, fit: BoxFit.cover),
+          Image.asset(
+            image, height: 40, width: 40, fit: BoxFit.cover),
           SizedBox(width: 10),
           Text(name, style: AppServices().whiteTextStyle()),
         ],

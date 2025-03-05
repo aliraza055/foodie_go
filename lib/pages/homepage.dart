@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/model/category_model.dart';
+import 'package:foodie_go/model/pizza_model.dart';
 import 'package:foodie_go/pages/categorytile.dart';
+import 'package:foodie_go/pages/foodtile.dart';
 import 'package:foodie_go/services/widget_serves.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +14,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> items=[];
+  List<PizzaModel> pizzaItems=[];
   int _selectIndex=0;
   @override
   void initState() {
     super.initState();
     items=CategoryModel.getCategoryModel();
+    pizzaItems=PizzaModel.getPizzaItems();
   }
   @override
   Widget build(BuildContext context) {
@@ -109,7 +113,17 @@ class _HomePageState extends State<HomePage> {
               
                 }),
               ),
-            )
+            ),
+            GridView.builder(
+              gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2) , 
+              itemBuilder: (context,index){
+                return FooTile(
+                  image: pizzaItems[index].image,
+                   name: pizzaItems[index].name, 
+                   price: pizzaItems[index].price
+                   );
+              })
           ],
         ),
       ),
