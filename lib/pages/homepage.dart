@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/model/burger_model.dart';
 import 'package:foodie_go/model/category_model.dart';
+import 'package:foodie_go/model/chinese_model.dart';
 import 'package:foodie_go/model/pizza_model.dart';
 import 'package:foodie_go/pages/categorytile.dart';
 import 'package:foodie_go/pages/foodtile.dart';
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   List<CategoryModel> items=[];
   List<PizzaModel> pizzaItems=[];
   List<BurgerModel>burgerItems=[];
+  List<ChineseModel>chineseItems=[];
   int _selectIndex=0;
   @override
   void initState() {
@@ -24,6 +26,7 @@ class _HomePageState extends State<HomePage> {
     items=CategoryModel.getCategoryModel();
     pizzaItems=PizzaModel.getPizzaItems();
     burgerItems=BurgerModel.getBurgers();
+    chineseItems=ChineseModel.getPizzaItems();
   }
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: ClipOval(child: Image.asset('images/boy.jpg',height: 60,width: 60,fit: BoxFit.cover,)),
+                  child: ClipOval(child: Image.asset('images/image.jpg',height: 60,width: 60,fit: BoxFit.cover,)),
                 )
               ],
             ),
@@ -155,15 +158,35 @@ class _HomePageState extends State<HomePage> {
                      price: burgerItems[index].price,
                      );
                 }),
-            ):Container(
-              height: MediaQuery.of(context).size.height/2,
+            ):
+            _selectIndex==2 ?
+             Expanded(
               child: GridView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: chineseItems.length,
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.6,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10
+                  ) , 
+                itemBuilder: (context,index){
+                  return FooTile(
+                    image: chineseItems[index].image,
+                     name: chineseItems[index].name, 
+                     price: chineseItems[index].price
+                     );
+                }),
+            ):
+            Expanded(
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
                 itemCount: pizzaItems.length,
                 gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                childAspectRatio: 0.7,
-                 // mainAxisSpacing: 10,
-                 // crossAxisSpacing: 10
+                  childAspectRatio: 0.6,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10
                   ) , 
                 itemBuilder: (context,index){
                   return FooTile(
@@ -173,7 +196,6 @@ class _HomePageState extends State<HomePage> {
                      );
                 }),
             )
-
           ],
         ),
       ),
