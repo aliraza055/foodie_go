@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodie_go/model/burger_model.dart';
 import 'package:foodie_go/model/category_model.dart';
 import 'package:foodie_go/model/chinese_model.dart';
+import 'package:foodie_go/model/mexcian_model.dart';
 import 'package:foodie_go/model/pizza_model.dart';
 import 'package:foodie_go/pages/categorytile.dart';
 import 'package:foodie_go/pages/foodtile.dart';
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   List<PizzaModel> pizzaItems=[];
   List<BurgerModel>burgerItems=[];
   List<ChineseModel>chineseItems=[];
+  List<MexcianModel>mexicanItems=[];
   int _selectIndex=0;
   @override
   void initState() {
@@ -27,6 +29,7 @@ class _HomePageState extends State<HomePage> {
     pizzaItems=PizzaModel.getPizzaItems();
     burgerItems=BurgerModel.getBurgers();
     chineseItems=ChineseModel.getPizzaItems();
+    mexicanItems=MexcianModel.getPizzaItems();
   }
   @override
   Widget build(BuildContext context) {
@@ -181,7 +184,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: GridView.builder(
                 padding: EdgeInsets.zero,
-                itemCount: pizzaItems.length,
+                itemCount: mexicanItems.length,
                 gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.6,
@@ -190,9 +193,9 @@ class _HomePageState extends State<HomePage> {
                   ) , 
                 itemBuilder: (context,index){
                   return FooTile(
-                    image: pizzaItems[index].image,
-                     name: pizzaItems[index].name, 
-                     price: pizzaItems[index].price
+                    image: mexicanItems[index].image,
+                     name: mexicanItems[index].name, 
+                     price: mexicanItems[index].price
                      );
                 }),
             )
