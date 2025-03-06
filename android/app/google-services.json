@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729847256294",
+    "project_id": "food-go-ac269",
+    "storage_bucket": "food-go-ac269.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729847256294:android:0766bcc9f08fd792695727",
+        "android_client_info": {
+          "package_name": "com.example.foodie_go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbBiRjiKY5DHMKD5FfNqnQKxW3nj3q5oA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
