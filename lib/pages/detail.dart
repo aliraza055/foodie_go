@@ -45,8 +45,12 @@ class _DeatailPageState extends State<DeatailPage> {
             Text(widget.name,style: AppServices().mainHeadingStyle(),),
             SizedBox(height: 10,),
             Text("Rs:${widget.price}",style: AppServices().mainHeadingStyle(),),
-            SizedBox(height: 60,),
+            SizedBox(height: 40,),
+            Center(child: Text('Quantity',style: AppServices().whiteTextStyle(),)),
+             SizedBox(height: 10,),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
                   onTap: (){
@@ -87,7 +91,18 @@ class _DeatailPageState extends State<DeatailPage> {
               ],
             ),
             SizedBox(height: 20,),
-            Text("Rs:$basePrice",style:AppServices().simpleTextStyle() ,)
+            Center(child: Text("Rs:$basePrice",style:AppServices().mainHeadingStyle() ,)),
+            SizedBox(height: 20,),
+            Center(
+              child: Container(
+                height: 60,
+                width: MediaQuery.of(context).size.width/2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.brown
+                ),child: Center(child: Text("Order Now",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white))),
+              ),
+            )
           ],
         ),
       ),
