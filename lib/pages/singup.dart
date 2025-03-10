@@ -117,6 +117,7 @@ class _SignupState extends State<Signup> {
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(10),
       ),
+      
       child: TextFormField(
         obscureText: obscureText,
         decoration: InputDecoration(
