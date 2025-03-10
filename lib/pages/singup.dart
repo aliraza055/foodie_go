@@ -123,7 +123,7 @@ class _SignupState extends State<Signup> {
           hintText: hintText,
           border: InputBorder.none,
           prefixIcon: Icon(icon, color: Colors.black54),
-          filled: false,
+          filled: true,
           fillColor: Colors.transparent,
         ),
       ),
