@@ -84,7 +84,6 @@ class _SignupState extends State<Signup> {
                   icon: Icons.lock,
                   obscureText: true,
                 ),
-      
                 // Sign Up Button
                 const SizedBox(height: 20),
                 ElevatedButton(
