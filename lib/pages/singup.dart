@@ -108,7 +108,6 @@ class _SignupState extends State<Signup> {
       ),
     );
   }
-
   // Custom method to create text fields
   Widget _buildTextField({required String hintText, required IconData icon, bool obscureText = false}) {
     return Container(
