@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/pages/singup.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
@@ -8,117 +9,140 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Key for Form
+
+  TextEditingController gmailController=TextEditingController();
+  TextEditingController passwordController=TextEditingController();
+
  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height / 3,
-            decoration: const BoxDecoration(
-              color: Color(0xffffefbf),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(50),
-                bottomRight: Radius.circular(50),
-              ),
-            ),
-            child: Center(
-              child: Image.asset(
-                'images/logo2.png',
-                height: 100,
-                width: 100,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),      
-          
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 200,left: 20,right: 20,bottom: 50),
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 5,
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
+      body: Form(
+        key: _formKey,
+        child: Stack(
+          children: [
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height / 3,
+              decoration: const BoxDecoration(
+                color: Color(0xffffefbf),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
                 ),
-              ],
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+              ),
+              child: Center(
+                child: Image.asset(
+                  'images/logo2.png',
+                  height: 100,
+                  width: 100,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),      
+            
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 200,left: 20,right: 20,bottom: 50),
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
                   ),
-                ),
-                const SizedBox(height: 40),
-      
-                // Name Field
-                _buildTextField(
-                  hintText: "Enter your name",
-                  icon: Icons.person,
-                ),
-      
-                // Email Field
-                const SizedBox(height: 20),
-                _buildTextField(
-                  hintText: "Enter your email",
-                  icon: Icons.email,
-                ),
-      
-                // Password Field
-                const SizedBox(height: 20),
-                _buildTextField(
-                  hintText: "Enter your password",
-                  icon: Icons.lock,
-                  obscureText: true,
-                ),
-                // Sign Up Button
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red.shade400,
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: 30,),
+                  const Text(
+                    "Sign In",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
                     ),
                   ),
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(fontSize: 20, color: Colors.white,fontWeight: FontWeight.bold),
+                  const SizedBox(height: 40),
+        
+                  _buildTextField(
+                     validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "This field cannot be empty"; // ✅ Validation logic
+                    }
+                    return null;
+                  },
+                    controler: gmailController,
+                    hintText: "Enter your email",
+                    icon: Icons.email,
                   ),
-                ),
-                 SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Have you already account!',style: TextStyle(fontSize: 16),),
-                TextButton(onPressed: (){
-
-                }, child: Text('Signup',style: TextStyle(color: Colors.red,fontSize: 18),))
-              ],
-            )
-              ],
-            ),
-          ),     
-        ],
+        
+                  const SizedBox(height: 30),
+                  _buildTextField(
+                     validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "This field cannot be empty"; // ✅ Validation logic
+                    }
+                    return null;
+                  },
+                    controler: passwordController,
+                    hintText: "Enter your password",
+                    icon: Icons.lock,
+                    obscureText: true,
+                  ),
+                  // Sign Up Button
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                    // ✅ If the form is valid, do something
+                  }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red.shade400,
+                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(fontSize: 20, color: Colors.white,fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                   SizedBox(height: 30,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('If you do not have account!',style: TextStyle(fontSize: 16),),
+                  TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=> Signup()));
+        
+                  }, child: Text('SignIn',style: TextStyle(color: Colors.red,fontSize: 18),))
+                ],
+              )
+                ],
+              ),
+            ),     
+          ],
+        ),
       ),
     );
   }
   // Custom method to create text fields
-  Widget _buildTextField({required String hintText, required IconData icon, bool obscureText = false}) {
+  Widget _buildTextField({required String hintText,
+   required IconData icon,
+    bool obscureText = false,
+    required TextEditingController controler,
+           required String? Function(String?)? validator,}) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
       decoration: BoxDecoration(
@@ -126,6 +150,7 @@ class _SigninState extends State<Signin> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
+        controller:controler ,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,
