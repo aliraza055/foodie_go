@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/pages/singup.dart';
+import 'package:foodie_go/pages/textformfield.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
@@ -73,27 +74,27 @@ class _SigninState extends State<Signin> {
                   ),
                   const SizedBox(height: 40),
         
-                  _buildTextField(
+                  TextFormFieldWidget(
                      validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "This field cannot be empty"; // ✅ Validation logic
                     }
                     return null;
                   },
-                    controler: gmailController,
+                    controller: gmailController,
                     hintText: "Enter your email",
                     icon: Icons.email,
                   ),
         
                   const SizedBox(height: 30),
-                  _buildTextField(
+                  TextFormFieldWidget(
                      validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "This field cannot be empty"; // ✅ Validation logic
                     }
                     return null;
                   },
-                    controler: passwordController,
+                    controller: passwordController,
                     hintText: "Enter your password",
                     icon: Icons.lock,
                     obscureText: true,
@@ -135,32 +136,6 @@ class _SigninState extends State<Signin> {
           ],
         ),
       ),
-    );
-  }
-  // Custom method to create text fields
-  Widget _buildTextField({required String hintText,
-   required IconData icon,
-    bool obscureText = false,
-    required TextEditingController controler,
-           required String? Function(String?)? validator,}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: TextFormField(
-        controller:controler ,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: InputBorder.none,
-          prefixIcon: Icon(icon, color: Colors.black54),
-          filled: true,
-          fillColor: Colors.transparent,
-        ),
-      ),
-
     );
   }
 }
