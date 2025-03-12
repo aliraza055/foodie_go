@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_go/pages/signin.dart';
 
-class Signup extends StatefulWidget {
-  const Signup({super.key});
+class Signin extends StatefulWidget {
+  const Signin({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<Signin> createState() => _SigninState();
 }
 
-class _SignupState extends State<Signup> {
-  @override
+class _SigninState extends State<Signin> {
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -107,7 +106,6 @@ class _SignupState extends State<Signup> {
               children: [
                 Text('Have you already account!',style: TextStyle(fontSize: 16),),
                 TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=> Signin()));
 
                 }, child: Text('Signup',style: TextStyle(color: Colors.red,fontSize: 18),))
               ],
