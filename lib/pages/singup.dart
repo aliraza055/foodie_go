@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/pages/signin.dart';
+import 'package:foodie_go/pages/textformfield.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -73,8 +74,8 @@ class _SignupState extends State<Signup> {
                   const SizedBox(height: 40),
         
                   // Name Field
-                  _buildTextField(
-                    controler: nameController,
+                  TextFormFieldWidget(
+                    controller: nameController,
                       validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "This field cannot be empty"; 
@@ -87,28 +88,28 @@ class _SignupState extends State<Signup> {
         
                   // Email Field
                   const SizedBox(height: 20),
-                  _buildTextField(
+                  TextFormFieldWidget(
                      validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "This field cannot be empty"; // ✅ Validation logic
                     }
                     return null;
                   },
-                    controler: gmailController,
+                    controller: gmailController,
                     hintText: "Enter your email",
                     icon: Icons.email,
                   ),
         
                   // Password Field
                   const SizedBox(height: 20),
-                  _buildTextField(
+                  TextFormFieldWidget(
                      validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "This field cannot be empty"; // ✅ Validation logic
                     }
                     return null;
                   },
-                    controler: passwordController,
+                    controller: passwordController,
                     hintText: "Enter your password",
                     icon: Icons.lock,
                     obscureText: true,
@@ -118,7 +119,7 @@ class _SignupState extends State<Signup> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        
+
                   }
                     },
                     style: ElevatedButton.styleFrom(
@@ -150,34 +151,6 @@ class _SignupState extends State<Signup> {
           ],
         ),
       ),
-    );
-  }
-  // Custom method to create text fields
-  Widget _buildTextField({required String hintText,
-   required IconData icon, 
-   bool obscureText = false
-   ,required TextEditingController controler,
-       required String? Function(String?)? validator, // ✅ Validator parameter
-}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: TextFormField(
-        controller:controler ,
-        validator: validator,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: InputBorder.none,
-          prefixIcon: Icon(icon, color: Colors.black54),
-          filled: true,
-          fillColor: Colors.transparent,
-        ),
-      ),
-
     );
   }
 }
