@@ -5,7 +5,7 @@ class TextFormFieldWidget extends StatelessWidget {
   final IconData icon;
   final bool obscureText;
   final TextEditingController controller;
-  final String? Function(String?)? validator; // Validator Function
+  final String? Function(String?)? validator;
 
   const TextFormFieldWidget({
     super.key,
@@ -18,24 +18,20 @@ class TextFormFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: TextFormField(
-        controller: controller,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: InputBorder.none,
-          prefixIcon: Icon(icon, color: Colors.black54),
-          filled: true,
-          fillColor: Colors.transparent,
-        ),
-        validator: validator, // ✅ Apply Validator
-      ),
-    );
+    return TextFormField(
+     controller: controller,
+     obscureText: obscureText,
+     decoration: InputDecoration(
+       hintText: hintText,
+       border:OutlineInputBorder(
+         borderSide: BorderSide.none,
+         borderRadius: BorderRadius.circular(10)
+       ),
+       prefixIcon: Icon(icon, color: Colors.black54),
+       filled: true,
+       fillColor: Colors.grey[200],
+     ),
+     validator: validator, 
+              );
   }
 }
