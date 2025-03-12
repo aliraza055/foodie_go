@@ -100,6 +100,15 @@ class _SignupState extends State<Signup> {
                     style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ),
+                 SizedBox(height: 20,),
+            Row(
+              children: [
+                Text('Have you already account!'),
+                TextButton(onPressed: (){
+
+                }, child: Text('Signup',style: TextStyle(color: Colors.red,fontSize: ),))
+              ],
+            )
               ],
             ),
           ),     

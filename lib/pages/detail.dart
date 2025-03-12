@@ -103,15 +103,7 @@ class _DeatailPageState extends State<DeatailPage> {
                 ),child: Center(child: Text("Order Now",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white))),
               ),
             ),
-            SizedBox(height: 20,),
-            Row(
-              children: [
-                Text('Have you already account!'),
-                TextButton(onPressed: (){
-
-                }, child: Text('Signup'))
-              ],
-            )
+           
           ],
         ),
       ),
