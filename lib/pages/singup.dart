@@ -89,7 +89,7 @@ class _SignupState extends State<Signup> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xffffefbf),
+                    backgroundColor: Colors.red.shade400,
                     padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -97,16 +97,17 @@ class _SignupState extends State<Signup> {
                   ),
                   child: const Text(
                     "Sign Up",
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(fontSize: 20, color: Colors.white,fontWeight: FontWeight.bold),
                   ),
                 ),
                  SizedBox(height: 20,),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Have you already account!'),
+                Text('Have you already account!',style: TextStyle(fontSize: 16),),
                 TextButton(onPressed: (){
 
-                }, child: Text('Signup',style: TextStyle(color: Colors.red,fontSize: ),))
+                }, child: Text('Signup',style: TextStyle(color: Colors.red,fontSize: 18),))
               ],
             )
               ],
