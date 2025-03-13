@@ -32,7 +32,7 @@ class _ImagePickerState extends State<OnBoaridng> {
            context,
            MaterialPageRoute(builder: (_) => Signup()),
            );
-              },
+              }
               child: Container(
                 height:50,
                 width: MediaQuery.of(context).size.width/2,
