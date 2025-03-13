@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/pages/singup.dart';
 import 'package:foodie_go/services/widget_serves.dart';
 
 class OnBoaridng extends StatefulWidget {
@@ -25,14 +26,22 @@ class _ImagePickerState extends State<OnBoaridng> {
             textAlign: TextAlign.center,
             style: AppServices().simpleTextStyle(),),
             SizedBox(height: 20,),
-            Container(
-              height:50,
-              width: MediaQuery.of(context).size.width/2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color(0xff8c592a)
+            GestureDetector(
+              onTap:() {
+            Navigator.pushReplacement(
+           context,
+           MaterialPageRoute(builder: (_) => Signup()),
+           );
+              },
+              child: Container(
+                height:50,
+                width: MediaQuery.of(context).size.width/2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color(0xff8c592a)
+                ),
+                child: Center(child: Text('Get Started',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:20 ),)),
               ),
-              child: Center(child: Text('Get Started',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:20 ),)),
             )
 
           ],
