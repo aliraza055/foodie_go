@@ -1,9 +1,9 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:descison_app/Utlis/toast.dart';
-import 'package:descison_app/auth/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:foodie_go/pages/homepage.dart';
+import 'package:foodie_go/services/toast.dart';
 
 class Authentication {
      User? user = FirebaseAuth.instance.currentUser;
@@ -19,7 +19,7 @@ class Authentication {
       }
       saveData(email, username);
       ToastError().toast("You have successfully created an account",Colors.green);
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=>const LoginPage()));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=>const HomePage ()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         ToastError().toast("The password provided is too weak!",Colors.red);
