@@ -12,7 +12,7 @@ class Authentication {
        await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
-      )
+      );
         User? user = FirebaseAuth.instance.currentUser;
       if (user != null && username != null) {
         await user.updateDisplayName(username);
