@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_go/pages/signin.dart';
 import 'package:foodie_go/pages/textformfield.dart';
+import 'package:foodie_go/services/authentication.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -119,7 +120,10 @@ class _SignupState extends State<Signup> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-
+                        Authentication().signUp(context,
+                         gmailController.text,
+                          passwordController.text,
+                           nameController.text);
                   }
                     },
                     style: ElevatedButton.styleFrom(
