@@ -9,7 +9,7 @@ class ToastError{
         timeInSecForIosWeb: 1,
         backgroundColor: bColor,
         textColor: Colors.white,
-        fontSize: 16.0,
+        fontSize: 160,
       );
   }
 }
