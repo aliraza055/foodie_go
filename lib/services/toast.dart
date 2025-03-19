@@ -6,7 +6,7 @@ class ToastError{
       msg: message,
       toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
+        timeInSecForIosWeb: 2,
         backgroundColor: bColor,
         textColor: Colors.white,
         fontSize: 16.0,
