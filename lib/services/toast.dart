@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 class ToastError{
-  void toast( String message,Color ){
+  void toast( String message,Color bColor){
     Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_LONG,
