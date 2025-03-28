@@ -49,7 +49,7 @@ class Authentication {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: gmail, password: password);
     } on FirebaseAuthException catch(e){
-        if(e.code=='not-user-found'){
+        if(e.code=='user-not-found'){
           ToastError().toast('user not found with this gmail', Colors.black);
         }else if(e.code=='wrong-password'){
           ToastError().toast('incorrect password', Colors.red);
