@@ -62,7 +62,7 @@ class _SignupState extends State<Signup> {
                 ],
               ),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+             //   mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
                     "Sign Up",
