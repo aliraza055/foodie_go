@@ -35,3 +35,20 @@ class TextFormFieldWidget extends StatelessWidget {
               );
   }
 }
+class TextFromFeil extends StatelessWidget {
+  final  controller;
+  final String  hinttext;
+  const TextFromFeil({required this.controller,required this.hinttext, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText:hinttext,
+        filled: true,
+        fillColor: Colors.black 
+      ),
+    );
+  }
+}
