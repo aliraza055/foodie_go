@@ -37,17 +37,25 @@ class TextFormFieldWidget extends StatelessWidget {
 }
 class TextFromFeil extends StatelessWidget {
   final  controller;
+  final IconData prefxIcon;
   final String  hinttext;
-  const TextFromFeil({required this.controller,required this.hinttext, super.key});
+  final String? Function(String?) validatr;
+  const TextFromFeil({required this.controller,required this.validatr,required this.prefxIcon,required this.hinttext, super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validatr,
       decoration: InputDecoration(
         hintText:hinttext,
         filled: true,
-        fillColor: Colors.black 
+        fillColor: Colors.black ,
+        prefixIcon: Icon(prefxIcon) ,
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(10)
+        )
       ),
     );
   }
