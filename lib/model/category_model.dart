@@ -14,4 +14,14 @@ class CategoryModel {
     ];
   }
 }
+class CategoryMOdell{
+  String image;
+  String name;
+  CategoryMOdell({required this.image,required this.name});
+List<CategoryMOdell>  getModel(){
+  return [
+    CategoryMOdell(image: 'imager',name: 'pizza')
+  ];
+}
+}
 
