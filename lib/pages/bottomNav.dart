@@ -33,7 +33,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
- // backgroundColor: Colors.grey[100], // 👈 Light background
   bottomNavigationBar: CurvedNavigationBar(
     backgroundColor: Colors.transparent, // 👈 Fix 1
     color: Colors.black,                 // 👈 Fix 2: actual nav bar color
