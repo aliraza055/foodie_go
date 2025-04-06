@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/pages/homepage.dart';
 import 'package:foodie_go/pages/singup.dart';
 import 'package:foodie_go/pages/textformfield.dart';
+import 'package:foodie_go/services/authentication.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
@@ -104,7 +106,11 @@ class _SigninState extends State<Signin> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                    // ✅ If the form is valid, do something
+                        Authentication().singIn(
+                          gmailController.text, 
+                          passwordController.text
+                          );
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=>HomePage()));
                   }
                     },
                     style: ElevatedButton.styleFrom(
@@ -127,7 +133,7 @@ class _SigninState extends State<Signin> {
                   TextButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (_)=> Signup()));
         
-                  }, child: Text('SignIn',style: TextStyle(color: Colors.red,fontSize: 18),))
+                  }, child: Text('SignUp',style: TextStyle(color: Colors.red,fontSize: 17),))
                 ],
               )
                 ],
