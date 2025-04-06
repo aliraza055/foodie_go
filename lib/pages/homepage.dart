@@ -4,6 +4,7 @@ import 'package:foodie_go/model/category_model.dart';
 import 'package:foodie_go/model/chinese_model.dart';
 import 'package:foodie_go/model/mexcian_model.dart';
 import 'package:foodie_go/model/pizza_model.dart';
+import 'package:foodie_go/pages/bottomNav.dart';
 import 'package:foodie_go/pages/categorytile.dart';
 import 'package:foodie_go/pages/foodtile.dart';
 import 'package:foodie_go/services/widget_serves.dart';
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar:BottomNavigation(),
       body: Container(
         margin: EdgeInsets.only(left: 18,top: 40),
        // color: Colors.amber,
