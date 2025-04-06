@@ -33,7 +33,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:BottomNavigation(),
       body: Container(
         margin: EdgeInsets.only(left: 18,top: 40),
        // color: Colors.amber,

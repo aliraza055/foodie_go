@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/pages/bottomNav.dart';
 import 'package:foodie_go/pages/homepage.dart';
 import 'package:foodie_go/pages/singup.dart';
 import 'package:foodie_go/pages/textformfield.dart';
@@ -110,7 +111,7 @@ class _SigninState extends State<Signin> {
                           gmailController.text, 
                           passwordController.text
                           );
-                          Navigator.push(context, MaterialPageRoute(builder: (_)=>HomePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=>BottomNavigation()));
                   }
                     },
                     style: ElevatedButton.styleFrom(

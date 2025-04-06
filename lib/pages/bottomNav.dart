@@ -33,24 +33,27 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:CurvedNavigationBar(
-        backgroundColor: Colors.black,
-        height: 70,
-        animationDuration: Duration(milliseconds: 500),
-        onTap: (value) {
-          setState(() {
-            currentIndex=value;
-          });
-        },
-        items: [
-        Icon(Icons.home,color: Colors.white,size: 30,),
-        Icon(Icons.shopping_bag,color: Colors.white,size: 30,),
-        Icon(Icons.wallet,color: Colors.white,size: 30,),
-        Icon(Icons.person,color: Colors.white,size: 30,)
+ // backgroundColor: Colors.grey[100], // 👈 Light background
+  bottomNavigationBar: CurvedNavigationBar(
+    backgroundColor: Colors.transparent, // 👈 Fix 1
+    color: Colors.black,                 // 👈 Fix 2: actual nav bar color
+    buttonBackgroundColor: Colors.black, // 👈 optional highlight color
+    height: 60,
+    animationDuration: Duration(milliseconds: 300),
+    onTap: (int index) {
+      setState(() {
+        currentIndex = index;
+      });
+    },
+    items: const [
+      Icon(Icons.home, color: Colors.white, size: 30),
+      Icon(Icons.shopping_bag, color: Colors.white, size: 30),
+      Icon(Icons.wallet, color: Colors.white, size: 30),
+      Icon(Icons.person, color: Colors.white, size: 30),
+    ],
+  ),
+  body: pages[currentIndex],
+);
 
-      ],
-      ),
-      body: pages[currentIndex],
-    );
   }
 }
