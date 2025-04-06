@@ -96,30 +96,25 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 30,),
-            GestureDetector(
-              onTap: (){
-
-              },
-              child: Container(
-                height: 50,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: items.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context,index){
-                    return GestureDetector(
-                      onTap: (){
-                         setState(() {
-                           _selectIndex=index;
-                         });
-                      },
-                      child: CategoryTile(
-                        image: items[index].image,
-                         name: items[index].name,
-                         isSelected:_selectIndex==index,));
-              
-                }),
-              ),
+            Container(
+              height: 50,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: items.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context,index){
+                  return GestureDetector(
+                    onTap: (){
+                       setState(() {
+                         _selectIndex=index;
+                       });
+                    },
+                    child: CategoryTile(
+                      image: items[index].image,
+                       name: items[index].name,
+                       isSelected:_selectIndex==index,));
+            
+              }),
             ),
            SizedBox(height: 16,),
             _selectIndex==0?
