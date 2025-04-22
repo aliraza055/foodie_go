@@ -4,7 +4,6 @@ import 'package:foodie_go/model/category_model.dart';
 import 'package:foodie_go/model/chinese_model.dart';
 import 'package:foodie_go/model/mexcian_model.dart';
 import 'package:foodie_go/model/pizza_model.dart';
-import 'package:foodie_go/pages/bottomNav.dart';
 import 'package:foodie_go/pages/categorytile.dart';
 import 'package:foodie_go/pages/foodtile.dart';
 import 'package:foodie_go/services/widget_serves.dart';
