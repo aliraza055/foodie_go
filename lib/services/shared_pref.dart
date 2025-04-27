@@ -6,7 +6,14 @@ class SharedPrefercesHelper{
   static String gmailIDkey='GMAILKEY';
     static String adressIDkey='ADRESSKEY';
 
-
+setUserAdress(String adress)async{
+  SharedPreferences pref=await SharedPreferences.getInstance();
+  return pref.setString(adressIDkey, adress);
+}
+getUserAdress()async{
+  SharedPreferences pref=await SharedPreferences.getInstance();
+  return pref.get(adressIDkey);
+}
 
   setUserID(String id)async{
     SharedPreferences pref=await SharedPreferences.getInstance();

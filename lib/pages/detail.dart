@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_go/services/shared_pref.dart';
 import 'package:foodie_go/services/widget_serves.dart';
 
 class DeatailPage extends StatefulWidget {
@@ -13,8 +14,16 @@ class DeatailPage extends StatefulWidget {
 }
 
 class _DeatailPageState extends State<DeatailPage> {
+  TextEditingController addressController=TextEditingController();
   int count=1;
   int basePrice=0;
+  String? address;
+  getSharedPref()async{
+    address=await SharedPrefercesHelper().getUserAdress();
+setState(() {
+  
+});
+  }
   @override
   void initState() {
     basePrice=int.parse(widget.price);
@@ -109,4 +118,41 @@ class _DeatailPageState extends State<DeatailPage> {
       ),
     );
   }
+  Future penBox ()async{
+  return showDialog(
+    context: context,
+     builder: (context){
+      return AlertDialog(
+        content: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                     GestureDetector(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.cancel)),
+                Text("Add the Address",style: TextStyle(
+                fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green.shade400
+                ),)
+
+                  ],
+                ),
+               
+                SizedBox(height: 20,),
+                Text("Add Address"),
+                TextField(
+                  controller: addressController,
+                )
+              ],
+            ),
+          ),
+        ),
+        
+      );
+     });
+
+}
 }
